@@ -16,7 +16,7 @@ export interface IUserSchema extends Document {
   updatedAt?: string
 }
 
-const UserSchema: Schema = new Schema(
+const IUserSchema: Schema = new Schema(
   {
     email: {
       type: String,
@@ -34,6 +34,6 @@ const UserSchema: Schema = new Schema(
   }
 )
 
-const User = mongoose.models.User || mongoose.model('User', UserSchema)
+const User = mongoose.models.User || mongoose.model('User', IUserSchema)
 
 export default User
