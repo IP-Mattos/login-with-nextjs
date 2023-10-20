@@ -35,7 +35,7 @@ export async function POST(request: NextRequest) {
 
     await resend.emails.send({
       from: 'onboarding@resend.dev',
-      to: 'ipmattoscontactos@gmail.com',
+      to: email,
       subject: 'Forget Password',
       html: `<a href="${forgetUrl}">Click here to change password</a>`
     })
