@@ -10,6 +10,7 @@ export const messages = {
   },
   success: {
     userCreated: 'User created successfully',
-    loginSuccess: 'Login successful'
+    loginSuccess: 'Login successful',
+    emailSent: 'Email sent successfully'
   }
 }
