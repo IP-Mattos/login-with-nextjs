@@ -23,6 +23,7 @@ export function Form({ title, description, onSubmit, children }: FormProps) {
   const [formValues, setFormValues] = useState<FormValues>({})
 
   const handleSubmit = (event: React.FormEvent) => {
+    event.preventDefault()
     onSubmit(formValues)
   }
 
