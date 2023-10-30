@@ -15,6 +15,7 @@ export async function POST(request: NextRequest) {
     const body: BodyProps = await request.json()
 
     const { newPassword, confirmPassword } = body
+    console.log(body)
     //Validate Fields
     if (!newPassword || !confirmPassword) {
       return NextResponse.json(

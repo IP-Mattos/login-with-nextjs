@@ -33,7 +33,7 @@ export async function POST(request: NextRequest) {
     //compare passwords
 
     const isCorrect: boolean = await bcrypt.compare(password, userFind.password)
-    if (isCorrect) {
+    if (!isCorrect) {
       return NextResponse.json(
         {
           message: messages.error.incorrectPassword
