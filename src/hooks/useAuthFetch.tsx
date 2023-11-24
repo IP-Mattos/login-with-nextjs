@@ -1,8 +1,8 @@
 import NotificationContext from '@/context/NotificationContext'
 import axios, { AxiosRequestConfig } from 'axios'
+import { cookies } from 'next/headers'
 import { useRouter } from 'next/navigation'
 import { useContext } from 'react'
-import { NextResponse, NextRequest } from 'next/server'
 
 interface AuthFetchProps {
   endpoint: string
@@ -17,15 +17,15 @@ export function useAuthFetch() {
 
   const authRouter = async ({ endpoint, formData, redirectRoute, options }: AuthFetchProps) => {
     try {
-      const response: any = await axios.post(`http://localhost:4000/api/v1/auth/${endpoint}`, formData)
-      const refreshToken = response.headers.get('refreshtoken')
-      console.log(refreshToken)
+      const { data } = await axios.post(`http://localhost:4000/api/v1/auth/${endpoint}`, formData, {
+        withCredentials: true
+      })
       showNotification({
-        msj: response.data.message,
+        msj: data.message,
         open: true,
         status: 'success'
       })
-      console.log(NextRequest)
+
       if (redirectRoute) router.push(redirectRoute)
     } catch (error: any) {
       showNotification({
