@@ -1,5 +1,5 @@
 import { Loader } from '@/components/Loader/Index'
-import styles from './styles.module.scss'
+import styles from './styles.module.css'
 interface SubmitButtonProps {
   buttonText: string
   isLoading?: boolean

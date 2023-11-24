@@ -18,7 +18,11 @@ export default function RootLayout({ children }: RootLayoutProps) {
     <html lang='en'>
       <body className={inter.className}>
         <NotificationProvider>
-          <main className='min-h-screen flex flex-col items-center justify-center'>{children}</main>
+          <main className='min-h-screen '>
+            <div className='p-4 top-0 font-bold text-2xl'>M {'>'} Materio</div>
+
+            {children}
+          </main>
         </NotificationProvider>
       </body>
     </html>

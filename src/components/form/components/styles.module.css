@@ -1,0 +1,68 @@
+.inputContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 10px;
+}
+.label {
+  position: absolute;
+  left: 0;
+  padding: 18px 20px;
+  pointer-events: none;
+  transition: 0.5s;
+  letter-spacing: 0rem;
+  font-size: 1rem;
+  font-weight: 300;
+}
+.input {
+  padding: 1rem 1rem;
+  border: 0.5px solid #878787;
+  font-size: 1rem;
+  border-radius: 6px;
+  transition-duration: 0.3s;
+  outline: 0.5px solid transparent;
+}
+
+.input:focus ~ label,
+.input:valid ~ label {
+  background-color: white;
+  font-size: 1rem;
+  transform: translate(10px, -15px);
+  padding: 2px 5px;
+}
+
+.Icon {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 20px;
+  width: 25px;
+  height: 25px;
+}
+.show {
+  background: url('../../../svg/show.svg');
+}
+.hide {
+  background: url('../../../svg/hide.svg');
+}
+.submitButton {
+  margin-top: 1rem;
+  width: 100%;
+  background: #9055fc;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 0.5rem 0;
+  border: 1px solid transparent;
+  transition-duration: 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.submitButton:hover {
+  background-color: #7b44e0;
+}

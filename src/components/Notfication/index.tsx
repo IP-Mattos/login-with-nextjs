@@ -8,8 +8,10 @@ interface Props {
 
 export const Notification = ({ status, msj }: Props) => {
   return (
-    <div className={`${styles.notification} ${styles[status!]}`}>
-      <p>{msj}</p>
-    </div>
+    msj && (
+      <div className={`${styles.notification} ${styles[status!]}`}>
+        <p>{msj}</p>
+      </div>
+    )
   )
 }
