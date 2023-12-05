@@ -8,13 +8,13 @@ export async function middleware(request: NextRequest) {
     if (!token) {
       return NextResponse.redirect(new URL('/', request.url))
     }
-
     const res = await fetch('http://localhost:4000/api/v1/auth/refresh-token', {
       method: 'POST',
       credentials: 'include'
     })
 
     const data = await res.json()
+    console.log(token.value)
     console.log(data)
     if (!data.isAuthorized) {
       return NextResponse.redirect(new URL('/', request.url))
